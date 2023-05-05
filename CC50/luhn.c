@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
-#define VISACODE 0
-#define AMEXCODE 1
-#define MASTERCARDCODE 2
-#define ERRORCODE 3
+enum cardflags {
+        VISACODE,
+        AMEXCODE,
+        MASTERCARDCODE,
+        ERRORCODE
+    };
 
 //prototypes
 bool checksum(int digit[], int n);
