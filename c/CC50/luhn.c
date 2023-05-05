@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 #define VISACODE 0
 #define AMEXCODE 1
 #define MASTERCARDCODE 2
 #define ERRORCODE 3
 
-int checksum(int digit[], int n){
+bool checksum(int digit[], int n){
     int sum = 0, temp;
-    
+
     for(int j = n - 2; j >= 0; j -= 2){
         if (digit[j] * 2 >= 10){
             temp = digit[j] * 2;
@@ -25,9 +26,9 @@ int checksum(int digit[], int n){
     }
 
     if (sum % 10 == 0){
-        return 0;
+        return true;
     } else {
-        return 1;
+        return false;
     }
 }
 
@@ -71,7 +72,7 @@ int main(){
     {
     case VISACODE:
         if (n == 13 || n == 16){
-            if (checksum(digit, n) == 0){
+            if (checksum(digit, n) == true){
                 printf("VISA\n");
             } else {
                 printf("INVALID\n");
@@ -85,7 +86,7 @@ int main(){
     
     case AMEXCODE:
         if (n == 15){
-            if (checksum(digit, n) == 0){
+            if (checksum(digit, n) == true){
                 printf("AMEX\n");
             } else {
                 printf("INVALID\n");
@@ -99,7 +100,7 @@ int main(){
 
     case MASTERCARDCODE:
         if (n == 16){
-            if (checksum(digit, n) == 0){
+            if (checksum(digit, n) == true){
                 printf("MASTERCARD\n");
             } else {
                 printf("INVALID\n");
