@@ -98,7 +98,7 @@ int main(){
 }
 
 /*this function checks up the initial digits of an array that represents
-a card number*/
+a card number and returns the flag*/
 int card_flag(int digit[]){
     if (digit[0] == 4){ // visa
         return VISACODE;
