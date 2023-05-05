@@ -19,7 +19,12 @@ int main(){
             resto = resto - divisor;
             quociente++;
         }
-    } else if ((x > 0 && d < 0) || (x < 0 && d > 0)){
+    } else if (x > 0 && d < 0) {
+        while (resto >= divisor){
+            resto = resto - divisor;
+            quociente--;
+        }
+    } else if(x < 0 && d > 0){
         while (resto > 0){
             resto = resto - divisor;
             quociente--;
