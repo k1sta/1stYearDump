@@ -30,8 +30,8 @@ int main(){
     //input gathering
     printf("Text: ");
     fgets(s, 1000, stdin);
-     int n = strlen(s);
-     
+    int n = strlen(s);
+    
     //number of letters, words and phrases in the input
     for (int i = 0; i < n; i++){
         if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123 )){
