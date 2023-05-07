@@ -21,6 +21,12 @@ int main (void){
     int key;
 
     //input gathering
+    printf("key: ");
+    scanf("%d", &key);
+    if (key < 0){
+        key = 26 + key;
+    }
+    getchar(); // consume the newline character
     printf("plaintext: ");
     fgets(mensagem, 100000, stdin);
 
@@ -28,13 +34,16 @@ int main (void){
     int n = strlen(mensagem);
     printf("cyphertext: ");
     for (int i = 0; i < n; i++){
-        printf("%c", mensagem[i] + 1);
+        if (mensagem[i] == ' '){
+        } else if(mensagem[i] > 64 && mensagem[i] < 91){
+            mensagem[i] = (((mensagem[i] - 65) + key) % 26) + 65;
+
+        } else if(mensagem[i] > 96 && mensagem[i] < 123){
+            mensagem[i] = (((mensagem[i] - 97) + key) % 26) + 97;
+        }
+        printf("%c", mensagem[i]);
     }
 
     //end of the function
     return 0;
 }
-
-/*SEGUINTE PEDRO DO FUTURO, o output tambem esta convertendo o " " para o proximo caractere. tudo errado
-abre a tabela ascii, usa o %26 que vai dar certo fe em deus
-*/
