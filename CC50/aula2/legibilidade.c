@@ -1,7 +1,7 @@
 /*
 A ideia desse codigo eh calcular a legibilidade de um código baseado no indice Coleman-Liau.
 
-Deve-se encontrar a media de letras por 100 palavras, a media de frases por sentença e inseri-las
+Deve-se encontrar a media de letras por 100 palavras, a media de frases por 100 sentenças e inseri-las
 na formula índice = 0,0588 * L - 0,296 * S - 15,8. O resultado desse indice e o nivel de leitura desse
 texto.
 
