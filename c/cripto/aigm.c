@@ -39,7 +39,7 @@ int main(){
     }
 
     //passo 3
-    printf("%d %d", quociente, resto);
+    printf("%d %d\n", quociente, resto);
 
 
 
