@@ -2,11 +2,11 @@
 #include <math.h>
 #include <stdbool.h>
 enum cardflags {
-        VISACODE,
-        AMEXCODE,
-        MASTERCARDCODE,
-        ERRORCODE
-    };
+    VISACODE,
+    AMEXCODE,
+    MASTERCARDCODE,
+    ERRORCODE
+};
 
 //prototypes
 bool checksum(int digit[], int n);
