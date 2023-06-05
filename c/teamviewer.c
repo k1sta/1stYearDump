@@ -1,12 +1,26 @@
 #include <stdio.h>
-typedef struct date {int day, month, year;} tDate;
+typedef struct date {int day, month, year;} tDate; // struct to support dd/mm/yyyy
 
-
+//prototypes
+tDate collectdate(); //collects the input date
 
 int main(){
+    //data dictionary
     tDate data, copia;
-    int temp;
     
+    //function call
+    data = collectdate();
+
+    //output
+    printf("The inserted date is: %d/%d/%d\n", data.day, data.month, data.year);
+
+    // return
+    return 0;
+}
+
+tDate collectdate(){
+    tDate data;
+    int temp;
     do{
         puts("type the day, month and year in this order separated with an space: ");
         scanf("%d %d %d", &data.day, &data.month, &data.year);
@@ -35,8 +49,5 @@ int main(){
         }
         puts("Invalid date");
     } while (1);
-
-    printf("The inserted date is: %d/%d/%d\n", data.day, data.month, data.year);
-
-    return 0;
+    return data;
 }
