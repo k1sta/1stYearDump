@@ -14,7 +14,7 @@ int main(){
 
   do{
     counter = 0;
-    for(int i = 0; i < size_vec; i++){
+    for(int i = 1; i < size_vec; i++){
       if (ord[i-1] > ord[i]){
         aux = ord[i];
         ord[i] = ord[i-1];
