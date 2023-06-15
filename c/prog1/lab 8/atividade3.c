@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-  int counter, aux, size_vec, orig[1000], ord[1000];
+  int size_vec, orig[1000], ord[1000];
 
   puts("Insert the number of the array: ");
   scanf("%d", &size_vec);
@@ -13,7 +13,7 @@ int main(){
   }
 
   do{
-    counter = 0;
+    int aux, counter = 0;
     for(int i = 1; i < size_vec; i++){
       if (ord[i-1] > ord[i]){
         aux = ord[i];
