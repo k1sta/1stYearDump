@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//struct dada no exercicio
 typedef struct
 {
     char nome[100];
@@ -21,7 +22,7 @@ int main(void){
 
     //loop while com a leitura dos inputs do teclado
     while(1){
-        //condiçao if para parada caso o usuario insira so '\n'
+        //condiçao if para parada caso o usuario insira so '\n', pois o scanf nao atualiza a variavel nesse caso
         printf("Nome: ");
         scanf("%[^\n]", alunoTemp.nome);
         if(strcmp(comp, alunoTemp.nome) == 0) break;
@@ -39,9 +40,7 @@ int main(void){
         alunoTemp.media = (alunoTemp.nota[0] +alunoTemp.nota[1] +alunoTemp.nota[2])/3;
 
         //debug
-        /*printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome,
-            alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2],
-            alunoTemp.media);*/
+        /*printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome, alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2], alunoTemp.media);*/
 
         //escrita
         fwrite(&alunoTemp, sizeof(Taluno), 1, fp);
@@ -50,9 +49,7 @@ int main(void){
     //leitura e impressao do que foi escrito no arquivo
     rewind(fp);
     while(fread(&alunoTemp, sizeof(Taluno), 1, fp) != 0){
-        printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome,
-            alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2],
-            alunoTemp.media);
+        printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome, alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2], alunoTemp.media);
     }
 
     //ggwp
