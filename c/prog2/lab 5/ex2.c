@@ -19,7 +19,9 @@ int main(void){
     fp = fopen("alunos.dat", "wb+");
     if (fp == NULL){ printf("erro arq"); return -1;}
 
+    //loop while com a leitura dos inputs do teclado
     while(1){
+        //condiçao if para parada caso o usuario insira so '\n'
         printf("Nome: ");
         scanf("%[^\n]", alunoTemp.nome);
         if(strcmp(comp, alunoTemp.nome) == 0) break;
@@ -33,26 +35,27 @@ int main(void){
         scanf("%lf", &alunoTemp.nota[2]);
         getchar();
 
+        //media
         alunoTemp.media = (alunoTemp.nota[0] +alunoTemp.nota[1] +alunoTemp.nota[2])/3;
 
+        //debug
         /*printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome,
             alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2],
             alunoTemp.media);*/
 
-
+        //escrita
         fwrite(&alunoTemp, sizeof(Taluno), 1, fp);
     }
 
+    //leitura e impressao do que foi escrito no arquivo
     rewind(fp);
-
-    while(!feof(fp)){
-        if (fread(&alunoTemp, sizeof(Taluno), 1, fp) == NULL) break;
+    while(fread(&alunoTemp, sizeof(Taluno), 1, fp) != 0){
         printf("%s, %lf, %lf, %lf, %lf\n", alunoTemp.nome,
             alunoTemp.nota[0],alunoTemp.nota[1],alunoTemp.nota[2],
             alunoTemp.media);
     }
 
-
+    //ggwp
     fclose(fp);
     return 0;
 }
