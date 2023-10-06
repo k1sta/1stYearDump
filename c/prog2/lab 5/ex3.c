@@ -13,7 +13,7 @@ typedef struct
 int main(){ 
     //dicionario de dados
     FILE *fp;
-    Taluno alnTemp, *alunos;
+    Taluno alnTemp;
     int numAlunos = 0, numAlt= 0;
 
     //abertura do arquivo
