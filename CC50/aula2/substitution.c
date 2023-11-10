@@ -1,14 +1,3 @@
-/*
-
-isso eh uma cifra de substituicao
-
-INICIO
-1. Receber a mensagem que sera criptografada.
-2. Iterar por cada letra e substitui-la pela nova correspondente.
-3. Retornar a nova mensagem
-FIM
-*/
-
 #include <stdio.h>
 #include <string.h>
 
